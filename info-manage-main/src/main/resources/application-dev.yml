@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/fruit_manager?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    password: 123456
+    username: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+
+
+# Mybatis
+mybatis:
+  #mapper中resultMap的type或者parameterType会用到自定义的POJO，可以Mybatis自动匹配
+  type-aliases-package: com.sm.graduation.admin.pojo,com.sm.graduation.usr.pojo,com.sm.graduation.health.pojo,com.sm.graduation.high.pojo,com.sm.graduation.medication.pojo,com.sm.graduation.food.pojo,com.sm.graduation.out.pojo,com.sm.graduation.checkin.pojo,com.sm.graduation.dormitory.pojo,com.sm.graduation.accident.pojo,com.sm.graduation.visitor.pojo,com.sm.graduation.older.pojo,com.sm.graduation.nurse.pojo
+  #mapper与接口进行定位
+  mapper-locations: classpath:/mapper/*.xml
+  #将带有下划线的数据库表字段映射为驼峰格式的实体类属性。
+  configuration:
+    map-underscore-to-camel-case: true
+
